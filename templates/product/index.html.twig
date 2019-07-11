@@ -14,6 +14,7 @@
                 <th>Created_at</th>
                 <th>Updated_at</th>
                 <th>Nb_like</th>
+                <th>Slug</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,14 +27,15 @@
                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.nbLike }}</td>
+                <td>{{ product.slug }}</td>
                 <td>
-                    <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('product_show', {'slug': product.slug}) }}">show</a>
+                    <a href="{{ path('product_edit', {'slug': product.slug}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="8">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
