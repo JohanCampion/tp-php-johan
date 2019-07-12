@@ -10,11 +10,6 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/johan.campion/Documents/Cours IPI/php/tp-php-synfony/tp-php-johan/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/johan.campion/Documents/Cours IPI/php/tp-php-synfony/tp-php-johan/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
+    <a href="{{ path('product_index') }}">Acceder à l'index de l'admin avec pour ajouter, modifier, supprimer</a>
 </div>
 {% endblock %}

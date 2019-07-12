@@ -14,8 +14,8 @@
                 <th>Created_at</th>
                 <th>Updated_at</th>
                 <th>Nb_like</th>
-                <th>Slug</th>
-                <th>actions</th>
+                <th>Category</th>
+                <th>Tags</th>
             </tr>
         </thead>
         <tbody>
@@ -28,11 +28,15 @@
                 <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.nbLike }}</td>
                 <td>{{ product.category.title }}</td>
-                <td>{{ product.tag.title }}</td>
-                <td>
-                    <a href="{{ path('product_show', {'slug': product.slug}) }}">show</a>
-                    <a href="{{ path('product_edit', {'slug': product.slug}) }}">edit</a>
-                </td>
+                {% for tag in product.tag %}
+                    <td>{{ tag.title }}</td>
+                {% endfor %}
+                {% if is_granted('ROLE_ADMIN') %}
+{#                <td>#}
+{#                    <a href="{{ path('product_show', {'slug': product.slug}) }}">show</a>#}
+{#                    <a href="{{ path('product_edit', {'slug': product.slug}) }}">edit</a>#}
+{#                </td>#}
+                {% endif %}
             </tr>
         {% else %}
             <tr>
