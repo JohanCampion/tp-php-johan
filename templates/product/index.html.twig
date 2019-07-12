@@ -27,7 +27,8 @@
                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ product.nbLike }}</td>
-                <td>{{ product.slug }}</td>
+                <td>{{ product.category.title }}</td>
+                <td>{{ product.tag.title }}</td>
                 <td>
                     <a href="{{ path('product_show', {'slug': product.slug}) }}">show</a>
                     <a href="{{ path('product_edit', {'slug': product.slug}) }}">edit</a>

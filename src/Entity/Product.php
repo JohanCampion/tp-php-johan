@@ -61,6 +61,11 @@ class Product
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->tag = new ArrayCollection();
@@ -179,6 +184,18 @@ class Product
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
